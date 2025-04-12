@@ -1,0 +1,168 @@
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #6366f1;
+  --secondary: #10b981;
+  --light: #f8fafc;
+  --dark: #0f172a;
+  --text: #334155;
+  --text-light: #64748b;
+}
+
+.medical-records-list {
+  margin-top: 2rem;
+}
+
+.no-records {
+  text-align: center;
+  color: var(--text-light);
+  padding: 3rem;
+  font-size: 1.1rem;
+  background-color: rgba(244, 245, 247, 0.5);
+  border-radius: 12px;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.record-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-left: 4px solid var(--primary-light);
+}
+
+.record-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.record-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 1.5rem;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.record-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+.record-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.record-status.verified {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--secondary);
+}
+
+.record-status.pending {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.record-date {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+}
+
+.record-field {
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.9rem;
+  flex: 0 0 90px;
+}
+
+.field-value {
+  color: var(--text);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.view-all-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-all-link:hover {
+  color: var(--primary-dark);
+}
+
+.view-all-link::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.view-all-link:hover::after {
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .records-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .record-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .record-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .record-status {
+    align-self: flex-start;
+  }
+  
+  .record-field {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .field-label {
+    flex: 1;
+  }
+}

@@ -1,0 +1,154 @@
+/* Chatbot.css */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #6366f1;
+  --secondary: #10b981;
+  --light: #f8fafc;
+  --dark: #0f172a;
+  --text: #334155;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --error: #ef4444;
+  --error-light: #fee2e2;
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --verified: #10b981;
+  --verified-light: #d1fae5;
+  --unverified: #ef4444;
+  --unverified-light: #fee2e2;
+}
+
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 160px);
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.record-info-bar {
+  display: flex;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.record-info-item {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.verification-status {
+  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.verification-status::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.verification-status.verified {
+  background-color: var(--verified-light);
+  color: var(--verified);
+}
+
+.verification-status.verified::before {
+  background-color: var(--verified);
+}
+
+.verification-status.unverified {
+  background-color: var(--unverified-light);
+  color: var(--unverified);
+}
+
+.verification-status.unverified::before {
+  background-color: var(--unverified);
+}
+
+/* Animation for chat container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatbot-container {
+    height: calc(100vh - 140px);
+    padding: 1rem;
+  }
+  
+  .record-info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .record-info-item {
+    margin-right: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .verification {
+    width: 100%;
+  }
+  
+  .verification-status {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-container {
+    height: calc(100vh - 120px);
+  }
+  
+  .info-label, .info-value {
+    font-size: 0.8rem;
+  }
+}

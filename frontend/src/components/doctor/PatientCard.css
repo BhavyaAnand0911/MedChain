@@ -1,0 +1,129 @@
+.patient-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  
+  .patient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .patient-name {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .patient-status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+  .status-critical {
+    background-color: #ff6b6b;
+    color: white;
+  }
+  
+  .status-stable {
+    background-color: #1abc9c;
+    color: white;
+  }
+  
+  .status-recovering {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .status-default {
+    background-color: #95a5a6;
+    color: white;
+  }
+  
+  .patient-info {
+    margin-bottom: 15px;
+  }
+  
+  .info-row {
+    display: flex;
+    margin-bottom: 5px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+    color: #7f8c8d;
+    width: 80px;
+  }
+  
+  .info-value {
+    color: #34495e;
+  }
+  
+  .info-value.condition {
+    font-weight: 500;
+  }
+  
+  .patient-visit {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+  
+  .visit-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .visit-label {
+    font-weight: 500;
+    color: #7f8c8d;
+  }
+  
+  .visit-date {
+    color: #34495e;
+  }
+  
+  .days-ago {
+    display: block;
+    font-size: 0.8rem;
+    color: #95a5a6;
+    text-align: right;
+  }
+  
+  .days-ago.overdue {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .patient-actions {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .view-details {
+    display: inline-block;
+    color: #3498db;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .view-details:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }

@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+bcrypt
+jwt
+pyotp
+email-validator
+python-multipart
+python-dotenv
+passlib
+scikit-learn
+numpy
+pytest
+pytest-asyncio
+httpx

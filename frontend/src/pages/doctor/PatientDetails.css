@@ -1,0 +1,171 @@
+.patient-details {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .back-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .patient-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .patient-header h1 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+  }
+  
+  .patient-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  
+  .patient-info p {
+    margin: 5px 0;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+  }
+  
+  .notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .note-item {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+  }
+  
+  .note-date {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin: 0 0 5px 0;
+  }
+  
+  .note-text {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .add-note {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+  }
+  
+  .add-note h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .add-note textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .button:active {
+    transform: translateY(0);
+  }
+  
+  .button.primary {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .button.primary:hover {
+    background-color: #2980b9;
+  }
+  
+  .button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #7f8c8d;
+  }
+  
+  .error {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #e74c3c;
+  }
+  
+  .error-message {
+    background-color: #fadbd8;
+    color: #c0392b;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .patient-info {
+      grid-template-columns: 1fr;
+    }
+  }

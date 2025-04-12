@@ -1,0 +1,120 @@
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .dialog-container {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .dialog-header.default {
+    background-color: #f8f9fa;
+  }
+  
+  .dialog-header.delete {
+    background-color: #fdf1f0;
+  }
+  
+  .dialog-header.warning {
+    background-color: #fff8e6;
+  }
+  
+  .dialog-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+  }
+  
+  .dialog-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+  }
+  
+  .dialog-content {
+    padding: 20px;
+  }
+  
+  .dialog-message {
+    margin: 0;
+    line-height: 1.5;
+    color: #2c3e50;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    border-top: 1px solid #eaeaea;
+    gap: 10px;
+  }
+  
+  .dialog-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dialog-button.cancel {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .dialog-button.cancel:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .dialog-button.confirm {
+    color: white;
+    border: none;
+  }
+  
+  .dialog-button.confirm.default {
+    background-color: #3498db;
+  }
+  
+  .dialog-button.confirm.default:hover {
+    background-color: #2980b9;
+  }
+  
+  .dialog-button.confirm.delete {
+    background-color: #e74c3c;
+  }
+  
+  .dialog-button.confirm.delete:hover {
+    background-color: #c0392b;
+  }
+  
+  .dialog-button.confirm.warning {
+    background-color: #f39c12;
+  }
+  
+  .dialog-button.confirm.warning:hover {
+    background-color: #d35400;
+  }

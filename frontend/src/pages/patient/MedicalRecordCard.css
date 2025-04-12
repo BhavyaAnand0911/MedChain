@@ -1,0 +1,137 @@
+.medical-record-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+  
+  .medical-record-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .record-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    font-size: 24px;
+    color: #e74c3c;
+  }
+  
+  .icon-file-pdf::before {
+    content: "📄";
+  }
+  
+  .record-details {
+    flex: 1;
+    margin: 0 15px;
+    overflow: hidden;
+  }
+  
+  .record-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 5px 0;
+  }
+  
+  .record-date {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin: 0 0 8px 0;
+  }
+  
+  .record-description {
+    font-size: 0.85rem;
+    color: #34495e;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+  }
+  
+  .record-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+  
+  .verification-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-right: 10px;
+  }
+  
+  .verification-badge.verified {
+    background-color: #e6f7ee;
+    color: #2ecc71;
+  }
+  
+  .verification-badge.unverified {
+    background-color: #f8eae9;
+    color: #e74c3c;
+  }
+  
+  .record-size {
+    color: #95a5a6;
+  }
+  
+  .record-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .action-button {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-button {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .chat-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .view-button {
+    background-color: #f1f2f6;
+    color: #2c3e50;
+  }
+  
+  .view-button:hover {
+    background-color: #e6e9ed;
+  }
+  
+  @media (max-width: 576px) {
+    .medical-record-card {
+      flex-direction: column;
+    }
+    
+    .record-icon {
+      margin-bottom: 10px;
+    }
+    
+    .record-details {
+      margin: 0 0 15px 0;
+    }
+    
+    .record-actions {
+      flex-direction: row;
+    }
+    
+    .action-button {
+      flex: 1;
+    }
+  }

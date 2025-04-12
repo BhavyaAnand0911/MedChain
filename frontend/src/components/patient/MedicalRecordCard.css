@@ -1,0 +1,73 @@
+.medical-record-card {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .medical-record-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .record-icon {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .file-icon {
+    font-size: 24px;
+  }
+  
+  .record-details {
+    flex: 1;
+    min-width: 0; /* Allows text truncation to work */
+  }
+  
+  .record-title {
+    margin: 0 0 8px 0;
+    color: #2d3748;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .record-meta {
+    display: flex;
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 8px;
+  }
+  
+  .record-date {
+    margin-right: 16px;
+  }
+  
+  .verification-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .verification-status.verified {
+    background-color: #c6f6d5;
+    color: #2f855a;
+  }
+  
+  .verification-status.pending {
+    background-color: #fefcbf;
+    color: #975a16;
+  }
+  
+  .verification-status.not-verified {
+    background-color: #fed7d7;
+    color: #c53030;
+  }
