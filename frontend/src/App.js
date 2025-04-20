@@ -33,6 +33,8 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!user) return;
+  
     const checkProfile = async () => {
       try {
         const { exists } = await checkProfileExists();
@@ -47,8 +49,9 @@ function App() {
         console.error("Profile check failed:", err);
       }
     };
+    
     checkProfile();
-  }, [navigate]);
+  }, [navigate, user]); // Add user as dependency
   if (loading) {
     return <div className="app-loading">Loading...</div>;
   }
