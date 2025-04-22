@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
-const Sidebar = ({ isOpen, closeSidebar }) => {
+const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+
   const navLinks = [
     { path: '/dashboard', name: 'Dashboard', icon: '📊' },
     { path: '/medical-records', name: 'Medical Records', icon: '🏥' },
@@ -10,19 +14,70 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     { path: '/disease-prediction', name: 'Disease Prediction', icon: '🧬' }
   ];
 
+  const toggleMobileSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const closeMobileSidebar = () => {
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 992;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+        setIsCollapsed(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
+      {/* Mobile toggle button (hamburger) */}
+      {isMobile && (
+        <button className="sidebar-mobile-toggle" onClick={toggleMobileSidebar} aria-label="Toggle sidebar">
+          <span className="material-icons">{isOpen ? 'close' : 'menu'}</span>
+        </button>
+      )}
+
       {/* Overlay for mobile */}
-      {isOpen && (
-        <div className="sidebar-overlay" onClick={closeSidebar}></div>
+      {isOpen && isMobile && (
+        <div className="sidebar-overlay" onClick={closeMobileSidebar}></div>
       )}
       
-      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <aside className={`sidebar ${isOpen ? 'open' : ''} ${isMobile ? 'mobile' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
         <div className="sidebar-header">
-          <h3 className="sidebar-title">HEALTH PORTAL</h3>
-          <button className="sidebar-close" onClick={closeSidebar} aria-label="Close sidebar">
-            <span className="material-icons">close</span>
-          </button>
+          {!isCollapsed && <h3 className="sidebar-title">HEALTH PORTAL</h3>}
+          <div className="sidebar-header-actions">
+            {/* Collapse toggle button (visible on desktop) */}
+            {!isMobile && (
+              <button className="sidebar-collapse-toggle" onClick={toggleCollapse} aria-label="Collapse sidebar">
+                <span className="material-icons">
+                  {isCollapsed ? 'chevron_right' : 'chevron_left'}
+                </span>
+              </button>
+            )}
+            {/* Close button (visible on mobile) */}
+            {isMobile && (
+              <button className="sidebar-close" onClick={closeMobileSidebar} aria-label="Close sidebar">
+                <span className="material-icons">close</span>
+              </button>
+            )}
+          </div>
         </div>
         
         <div className="sidebar-content">
@@ -32,10 +87,11 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
                 <NavLink 
                   to={link.path} 
                   className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                  onClick={closeSidebar}
+                  onClick={closeMobileSidebar}
                 >
                   <span className="material-icons nav-icon">{link.icon}</span>
-                  <span className="nav-text">{link.name}</span>
+                  {!isCollapsed && <span className="nav-text">{link.name}</span>}
+                  {isCollapsed && <span className="nav-tooltip">{link.name}</span>}
                 </NavLink>
               </li>
             ))}
@@ -43,10 +99,17 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         </div>
         
         <div className="sidebar-footer">
-          <div className="blockchain-status">
-            <span className="status-indicator"></span>
-            <span className="status-text">Secure Connection</span>
-          </div>
+          {!isCollapsed && (
+            <div className="blockchain-status">
+              <span className="status-indicator"></span>
+              <span className="status-text">Secure Connection</span>
+            </div>
+          )}
+          {isCollapsed && (
+            <div className="blockchain-status-collapsed">
+              <span className="status-indicator"></span>
+            </div>
+          )}
         </div>
       </aside>
     </>
