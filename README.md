@@ -30,17 +30,6 @@ MedChain is a decentralized, intelligent healthcare system that securely manages
 - Blockchain-based hash storage to ensure 100% record integrity
 - RESTful APIs for frontend-backend communication
 
-## 📷 Screenshots
-
-| Feature | Screenshot |
-| :------ | :--------- |
-| Patient Dashboard | (Insert Screenshot) |
-| Upload Medical Reports | (Insert Screenshot) |
-| Blockchain Verification | (Insert Screenshot) |
-| AI Disease Prediction | (Insert Screenshot) |
-
-*(Add screenshots in the `assets/` folder and link here)*
-
 ## ⚙️ Local Setup
 
 1. **Clone the repository:**
@@ -70,21 +59,16 @@ AUTH0_CLIENT_ID=your-auth0-client-id
 AUTH0_CLIENT_SECRET=your-auth0-client-secret
 
 
-📈 Performance Highlights
+## 📈 Performance Highlights
 <200ms API response time under load
-
 AI-based disease predictions with ~88% accuracy
-
 Scalable up to 10,000+ concurrent API requests with FastAPI and PostgreSQL optimization
 
-🧠 Future Enhancements
+## 🧠 Future Enhancements
 Smart contract-based fine-grained access control
-
 Integration with wearables and real-time health monitoring
-
 IPFS decentralized document storage
-
 Deployment on mainnet (Ethereum / Polygon) with Layer-2 scaling
 
-🤝 Contributors
+## 🤝 Contributors
 Sakshi Lele — Project Lead, Full Stack Developer
