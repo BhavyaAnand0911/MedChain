@@ -36,7 +36,7 @@ MedChain is a decentralized, intelligent healthcare system that securely manages
    ```bash
    git clone https://github.com/your-username/medchain.git
    cd medchain
-2. **Backend
+2. **Backend**
    ```bash
    cd backend
    python -m venv env
@@ -44,13 +44,13 @@ MedChain is a decentralized, intelligent healthcare system that securely manages
    env\Scripts\activate     # Windows
    pip install -r requirements.txt
    uvicorn main:app --reload
-4. **Frontend Setup
+4. **Frontend Setup**
    ```bash
    cd frontend
    npm install
    npm run dev
 
-5. **Environment Variables 
+5. **Environment Variables**
 DATABASE_URL=postgresql://username:password@localhost/medchain
 ALCHEMY_API_KEY=your-alchemy-key
 BLOCKCHAIN_ACCOUNT_ADDRESS=your-wallet-address
