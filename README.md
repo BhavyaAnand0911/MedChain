@@ -51,13 +51,13 @@ MedChain is a decentralized, intelligent healthcare system that securely manages
    npm run dev
 
 5. **Environment Variables**
-DATABASE_URL=postgresql://username:password@localhost/medchain
-ALCHEMY_API_KEY=your-alchemy-key
-BLOCKCHAIN_ACCOUNT_ADDRESS=your-wallet-address
-BLOCKCHAIN_PRIVATE_KEY=your-private-key
-AUTH0_DOMAIN=your-auth0-domain
-AUTH0_CLIENT_ID=your-auth0-client-id
-AUTH0_CLIENT_SECRET=your-auth0-client-secret
+- DATABASE_URL=postgresql://username:password@localhost/medchain
+- ALCHEMY_API_KEY=your-alchemy-key
+- BLOCKCHAIN_ACCOUNT_ADDRESS=your-wallet-address
+- BLOCKCHAIN_PRIVATE_KEY=your-private-key
+- AUTH0_DOMAIN=your-auth0-domain
+- AUTH0_CLIENT_ID=your-auth0-client-id
+- AUTH0_CLIENT_SECRET=your-auth0-client-secret
 
 
 ## 📈 Performance Highlights
