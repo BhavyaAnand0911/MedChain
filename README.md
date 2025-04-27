@@ -36,20 +36,21 @@ MedChain is a decentralized, intelligent healthcare system that securely manages
    ```bash
    git clone https://github.com/your-username/medchain.git
    cd medchain
-### Backend Setup
-cd backend
-python -m venv env
-source env/bin/activate  # Linux/Mac
-env\Scripts\activate     # Windows
-pip install -r requirements.txt
-uvicorn main:app --reload
+2. **Backend
+   ```bash
+   cd backend
+   python -m venv env
+   source env/bin/activate  # Linux/Mac
+   env\Scripts\activate     # Windows
+   pip install -r requirements.txt
+   uvicorn main:app --reload
+4. **Frontend Setup
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
 
-### Frontend Setup
-cd frontend
-npm install
-npm run dev
-
-### Environment Variables 
+5. **Environment Variables 
 DATABASE_URL=postgresql://username:password@localhost/medchain
 ALCHEMY_API_KEY=your-alchemy-key
 BLOCKCHAIN_ACCOUNT_ADDRESS=your-wallet-address
@@ -60,15 +61,15 @@ AUTH0_CLIENT_SECRET=your-auth0-client-secret
 
 
 ## 📈 Performance Highlights
-<200ms API response time under load
-AI-based disease predictions with ~88% accuracy
-Scalable up to 10,000+ concurrent API requests with FastAPI and PostgreSQL optimization
+- <200ms API response time under load
+- AI-based disease predictions with ~88% accuracy
+- Scalable up to 10,000+ concurrent API requests with FastAPI and PostgreSQL optimization
 
 ## 🧠 Future Enhancements
-Smart contract-based fine-grained access control
-Integration with wearables and real-time health monitoring
-IPFS decentralized document storage
-Deployment on mainnet (Ethereum / Polygon) with Layer-2 scaling
+- Smart contract-based fine-grained access control
+- Integration with wearables and real-time health monitoring
+- IPFS decentralized document storage
+- Deployment on mainnet (Ethereum / Polygon) with Layer-2 scaling
 
 ## 🤝 Contributors
-Sakshi Lele — Project Lead, Full Stack Developer
+- Sakshi Lele — Full Stack Developer
